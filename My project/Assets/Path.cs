@@ -4,37 +4,71 @@ using UnityEngine;
 
 public class Path : MonoBehaviour
 {
-    private void OnDrawGizmos()
+    public List<Vector3> waypoints = new List<Vector3>();
+    // Start is called before the first frame update
+
+    public int current = 0;
+
+    public bool isLooped = true;
+
+    private void PopulatePath()
     {
-        foreach(Transform x in transform)
+        waypoints.Clear();
+        foreach(Transform child in transform.GetComponentsInChildren<Transform>())
         {
-            Gizmos.color = Color.black;
-            Gizmos.DrawWireSphere(x.position, 1f);
+            if (child != transform)
+            {
+                waypoints.Add(child.position);
+            }
         }
-
-        Gizmos.color = Color.green;
-        for(int i = 0; i < transform.childCount - 1; i++)
-        {
-            Gizmos.DrawLine(transform.GetChild(i).position, transform.GetChild(i + 1).position);
-        }
-
-        Gizmos.DrawLine(transform.GetChild(transform.childCount - 1).position, transform.GetChild(0). position);
     }
 
-    public Transform GetNextPath(Transform currentPath)
+    public void Awake()
     {
-        if(currentPath == null)
+        PopulatePath();
+    }
+
+    public void OnDrawGizmos()
+    {
+        PopulatePath();
+        Gizmos.color = Color.cyan;
+        for(int i = 1 ; i < waypoints.Count ; i ++)
         {
-            return transform.GetChild(0);
+            Gizmos.DrawLine(waypoints[i - 1], waypoints[i]);
+            Gizmos.DrawSphere(waypoints[i-1], 1);
+            Gizmos.DrawSphere(waypoints[i], 1);
+            
         }
 
-        if(currentPath.GetSiblingIndex() < transform.childCount - 1)
+        if (isLooped)
         {
-            return transform.GetChild(currentPath.GetSiblingIndex() + 1);
+            Gizmos.DrawLine(waypoints[waypoints.Count - 1], waypoints[0]);
+
+        }
+    }
+
+    public Vector3 Next()
+    {
+        return waypoints[current];
+    }
+
+    public bool IsLast()
+    {
+        return (current == waypoints.Count - 1);
+    }
+ 
+    public void AdvanceToNext()
+    {
+        if (! isLooped)
+        {
+            if (! IsLast())
+            {
+                current ++; 
+            }
         }
         else
         {
-            return transform.GetChild(0);
+            current = (current + 1) % waypoints.Count;
         }
     }
 }

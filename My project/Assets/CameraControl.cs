@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class CameraControl : MonoBehaviour
 {
-    public Transform SpaceShip;
+    public Transform target;
+
     public Vector3 offset;
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        transform.position = SpaceShip.position+offset;
+        transform.position = target.position + offset;
+
+        transform.LookAt(target);
     }
 }
