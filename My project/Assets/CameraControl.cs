@@ -6,13 +6,32 @@ public class CameraControl : MonoBehaviour
 {
     public Transform target;
 
-    public Vector3 offset;
+    public float distance;
 
-    // Update is called once per frame
-    void FixedUpdate()
+    public float targetHeight;
+
+    private float x = 0.0f;
+
+    private float y = 0.0f;
+
+    void Start()
     {
-        transform.position = target.position + offset;
+        var angles = transform.eulerAngles;
+        x = angles.x;
+        y = angles.y;
+    }
 
-        transform.LookAt(target);
+    void LateUpdate()
+    {
+        if(!target)
+        {
+            return;
+        }
+        y = target.eulerAngles.y;
+        Quaternion rotation = Quaternion.Euler(x, y, 0);
+        transform.rotation = rotation;
+
+        Vector3 position = target.position - (rotation * Vector3.forward * distance + new Vector3(0, targetHeight, 0));
+        transform.position = position;
     }
 }

@@ -221,8 +221,8 @@ MonoBehaviour:
   speed: 0
   acceleration: {x: 0, y: 0, z: 0}
   force: {x: 0, y: 0, z: 0}
-  maxSpeed: 30
-  maxForce: 30
+  maxSpeed: 45
+  maxForce: 45
   mass: 1
   seekEnabled: 0
   seekTargetTransform: {fileID: 0}
@@ -358,8 +358,8 @@ MonoBehaviour:
   speed: 0
   acceleration: {x: 0, y: 0, z: 0}
   force: {x: 0, y: 0, z: 0}
-  maxSpeed: 30
-  maxForce: 30
+  maxSpeed: 45
+  maxForce: 45
   mass: 1
   seekEnabled: 0
   seekTargetTransform: {fileID: 0}
@@ -615,8 +615,8 @@ MonoBehaviour:
   speed: 0
   acceleration: {x: 0, y: 0, z: 0}
   force: {x: 0, y: 0, z: 0}
-  maxSpeed: 30
-  maxForce: 30
+  maxSpeed: 45
+  maxForce: 45
   mass: 1
   seekEnabled: 0
   seekTargetTransform: {fileID: 0}
@@ -867,8 +867,8 @@ MonoBehaviour:
   speed: 0
   acceleration: {x: 0, y: 0, z: 0}
   force: {x: 0, y: 0, z: 0}
-  maxSpeed: 30
-  maxForce: 30
+  maxSpeed: 45
+  maxForce: 45
   mass: 1
   seekEnabled: 0
   seekTargetTransform: {fileID: 0}
@@ -927,8 +927,8 @@ MonoBehaviour:
   speed: 0
   acceleration: {x: 0, y: 0, z: 0}
   force: {x: 0, y: 0, z: 0}
-  maxSpeed: 30
-  maxForce: 30
+  maxSpeed: 45
+  maxForce: 45
   mass: 1
   seekEnabled: 0
   seekTargetTransform: {fileID: 0}
@@ -1064,8 +1064,8 @@ MonoBehaviour:
   speed: 0
   acceleration: {x: 0, y: 0, z: 0}
   force: {x: 0, y: 0, z: 0}
-  maxSpeed: 30
-  maxForce: 30
+  maxSpeed: 45
+  maxForce: 45
   mass: 1
   seekEnabled: 0
   seekTargetTransform: {fileID: 0}
@@ -1231,8 +1231,8 @@ MonoBehaviour:
   speed: 0
   acceleration: {x: 0, y: 0, z: 0}
   force: {x: 0, y: 0, z: 0}
-  maxSpeed: 30
-  maxForce: 30
+  maxSpeed: 45
+  maxForce: 45
   mass: 1
   seekEnabled: 0
   seekTargetTransform: {fileID: 0}
@@ -1368,7 +1368,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  offset: {x: 0, y: 0, z: 20}
+  distance: 0
+  targetHeight: 0
 --- !u!114 &1394691434
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1638,8 +1639,8 @@ MonoBehaviour:
   speed: 0
   acceleration: {x: 0, y: 0, z: 0}
   force: {x: 0, y: 0, z: 0}
-  maxSpeed: 30
-  maxForce: 30
+  maxSpeed: 45
+  maxForce: 45
   mass: 1
   seekEnabled: 0
   seekTargetTransform: {fileID: 0}
@@ -1775,8 +1776,8 @@ MonoBehaviour:
   speed: 0
   acceleration: {x: 0, y: 0, z: 0}
   force: {x: 0, y: 0, z: 0}
-  maxSpeed: 30
-  maxForce: 30
+  maxSpeed: 45
+  maxForce: 45
   mass: 1
   seekEnabled: 0
   seekTargetTransform: {fileID: 0}
@@ -1912,8 +1913,8 @@ MonoBehaviour:
   speed: 0
   acceleration: {x: 0, y: 0, z: 0}
   force: {x: 0, y: 0, z: 0}
-  maxSpeed: 30
-  maxForce: 30
+  maxSpeed: 45
+  maxForce: 45
   mass: 1
   seekEnabled: 0
   seekTargetTransform: {fileID: 0}
