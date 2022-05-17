@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class Fighter : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public float health = 10;
+    public float ammo = 10;
+    
+    public GameObject bullet;
+    public GameObject enemy;
+
     void Start()
     {
-        
     }
 
-    // Update is called once per frame
     void Update()
-    {
-        
+    {                
+
     }
 }
