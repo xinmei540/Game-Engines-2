@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class SceneChange : MonoBehaviour
 {
     public float countTime = 0f;
+    public string scene;
 
     // Update is called once per frame
     void Update()
@@ -19,7 +20,7 @@ public class SceneChange : MonoBehaviour
         countTime += Time.deltaTime;
         if(countTime > 30.0f)
         {
-            SceneManager.LoadScene("Battle");
+            SceneManager.LoadScene(scene);
         }
     }
 

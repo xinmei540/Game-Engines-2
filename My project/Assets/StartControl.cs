@@ -4,27 +4,24 @@ using UnityEngine;
 
 public class StartControl : MonoBehaviour
 {
+    
     public void OnTriggerEnter(Collider c)
     {
         if (c.tag == "Bullet")
         {
             if (GetComponent<Fighter>().health > 0)
-            {            
+            {
                 GetComponent<Fighter>().health --;
             }
             Destroy(c.gameObject);
-            if (GetComponent<StateMachine>().currentState.GetType() != typeof(Dead))
-            {
-                GetComponent<StateMachine>().ChangeState(new DefendState());    
-            }
         }
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        GetComponent<StateMachine>().ChangeState(new PatrolState());   
-        GetComponent<StateMachine>().SetGlobalState(new Alive());        
+        GetComponent<StateMachine>().ChangeState(new AttackState());        
+        GetComponent<StateMachine>().SetGlobalState(new Alive());
     }
 
     // Update is called once per frame
